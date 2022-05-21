@@ -1,20 +1,23 @@
 #include<stdio.h>
 int main()
 {
-    int i,n;
-    scanf("%d",&n);
-    int a=0,b=0,c=1;
-    if(n==0||n==1)
-    printf("true");
-    while(a<n)
+    int n1=0,n2=1,n3,i,number;
+    scanf("%d",&number);
+    for(i=2;i<number;++i)
     {
-        a=b+c;
-        b=c;
-        c=a;
-    }
-    if(a==n)
-    printf("True");
-    else
-    printf("False");
-    return 0;
+        n3=n1+n2;
+        if(n3==number)
+        {
+            printf("True");
+            break;
+        }
+        else if(n3>number)
+        {
+            printf("False");
+            break;
+        } 
+    n1=n2;
+    n2=n3;
+}
+return 0;
 }
