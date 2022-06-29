@@ -1,17 +1,16 @@
 #include<stdio.h>
 int main()
 {
-    int r,sum=0,n,t;
+    int n,n1,rev=0,rem;
     scanf("%d",&n);
-    t=n;
-    while(n!=0)
+    n1=n;
+    while(n>0)
     {
-        r=n%10;
-        sum=sum*10+r;
+        rem=n%10;
+        rev=rev*10+rem;
         n=n/10;
     }
-  
-    if(t==sum)
+    if(n1==rev)
     {
         printf("True");
     }
@@ -19,4 +18,5 @@ int main()
     {
         printf("False");
     }
+    return 0;
 }
