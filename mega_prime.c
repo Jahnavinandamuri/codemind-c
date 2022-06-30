@@ -1,46 +1,27 @@
 #include<stdio.h>
-int main()
-{
-    int i,j,m,n,fact=0,dig=0,pr=0;
+int isPrime(int n){
+    if(n<=1) return 0;
+    for(int i=2;i*i<=n;i++){
+        if(n%i==0) return 0;
+    }
+    return 1;
+}
+int main(){
+    int n,r,f=0;
     scanf("%d",&n);
-    for(i=1;i<=n;i++)
-    {
-        if(n%i==0)
-        {
-            fact++;
-        }
-    }
-    if(fact==2)
-    {
-        while(n>0)
-        {
-            fact=0;
-            m=n%10;
-            for(j=1;j<=m;j++)
-            {
-                if(m%j==0)
-                {
-                    fact++;
-                }
-            }
-            if(fact==2)
-            {
-                pr++;
-            }
-            dig++;
+    if(isPrime(n)){
+        while(n){
+            r=n%10;
             n/=10;
-        }
-        if(dig==pr)
-        {
-            printf("Mega Prime");
-        }
-        else
-        {
-            printf("Not Mega Prime");
-        }
+            if(isPrime(r)==0){
+                printf("Not Mega Prime");
+                f=1;
+                break;
+            }
+        }if(f==0)
+        printf("Mega Prime");
     }
-    else
-    {
+    else{
         printf("Not Mega Prime");
     }
     return 0;
