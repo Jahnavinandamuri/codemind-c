@@ -1,21 +1,20 @@
 #include<stdio.h>
-int main()
-{
-    int n,i,sum=0;
-    scanf("%d",&n);
-    for(i=1;i<n;i++)
-    {
-        if(n%i==0)
-        {
-            sum=sum+i;
+int main(){
+    int num,a=0,t=0,num1,i;
+    scanf("%d",&num);
+    num1=num;
+    for(i=1;i<num;i++){
+        t=num%i;
+        if(t==0){
+            a=i+a;
+            //a=i;
         }
     }
-    if(sum==n)
-    {
+    if(a==num){
         printf("True");
     }
-    else
-    {
+    else{
         printf("False");
     }
+    return 0;
 }
