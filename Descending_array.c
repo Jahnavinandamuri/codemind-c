@@ -1,4 +1,4 @@
- #include<stdio.h>
+#include<stdio.h>
  int main()
  {
      int n,flag=0,i;
@@ -23,4 +23,4 @@
      else
      printf("yes");
      return 0;
- }
+}
