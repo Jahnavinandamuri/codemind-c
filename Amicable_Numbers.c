@@ -1,29 +1,21 @@
 #include<stdio.h>
-int main()
-{
-    int i,n1,n2,div1=0,div2=0;
-    scanf("%d%d",&n1,&n2);
-    for(i=1;i<n1;i++)
-    {
-        if(n1%i==0)
-        {
-            div1+=i;
-        }
+int factorSum(int n){
+    int sum=0,i;
+    for(i=1;i<n;i++){
+        if(n%i==0)
+        sum+=i;
     }
-    for(i=1;i<n2;i++)
-    {
-        if(n2%i==0)
-        {
-            div2+=i;
-        }
-    }
-    if(n1==div2 && n2==div1)
-    {
-        printf("Amicable");
-    }
+    return sum;
+}
+int main(){
+    int n,m;
+    scanf("%d
+%d",&n,&m);
+    int a=factorSum(n);
+    int b=factorSum(m);
+    if(a==m && b==n)
+    printf("Amicable");
     else
-    {
-        printf("Not Amicable");
-    }
+    printf("Not Amicable");
     return 0;
 }
