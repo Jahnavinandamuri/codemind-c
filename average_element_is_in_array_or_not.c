@@ -1,28 +1,58 @@
 #include<stdio.h>
-int main()
-{
-    int n ,a[100],i,sum=0,avg=0,c=0;
+int main(){
+    int n;
     scanf("%d",&n);
-    for(i=0;i<n;i++)
-    {
+    int a[n],s=0,k=0;
+    for(int i=0;i<n;i++){
         scanf("%d",&a[i]);
-        sum=sum+a[i];
+        s+=a[i];
     }
-    avg=sum/n;
-    for(i=0;i<n;i++)
-    {
-        if(avg==a[i])
-        {
-            c=1;
+    for(int i=0;i<n;i++){
+        if(a[i]==s/n){
+            printf("True");
+            k=1;
             break;
         }
     }
-    if(c==1)
-    {
-        printf("True");
-    }
-    else
-    {
-        printf("False");
-    }
+    if(k==0)
+    printf("False");
+    return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
