@@ -1,16 +1,20 @@
 #include<stdio.h>
-int main()
-{
-    int n,a[100],k,i,s;
+
+int main(){
+    int n,t,c=0;
     scanf("%d",&n);
-    for(i=0;i<n;i++)
+    int a[n];
+    for(int i=0;i<n;i++)
+    scanf("%d ",&a[i]);
+    int key,min=9999999,max=0;
+    scanf("%d",&key);
+   
+    for(int i=0;i<key;i++)
     {
-        scanf("%d",&a[i]);
+        
+            c+=a[i];
+        
     }
-    scanf("%d",&k);
-    for(i=0;i<=k-1;i++)
-    {
-        s=s+a[i];
-    }
-    printf("%d",s);
+    printf("%d",c);
+    return 0;
 }
