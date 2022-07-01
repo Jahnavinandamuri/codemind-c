@@ -1,26 +1,31 @@
 #include<stdio.h>
-int main()
-{
-    int n,r=0,s,sq,t=0;
-    scanf("%d", &n);
-    s=n*n;
-    while(n>0)
-    {
-        r=r*10+n%10;
-        n/=10;
-    }
-    sq=r*r;
-    while(sq>0)
-    {
-        t=t*10+sq%10;
-        sq/=10;
-    }
-    if(s==t)
-    {
-        printf("True");
-    }
+#include<math.h>
+int reverse(int);
+int main(){
+    int n,i,rem,bob;
+    scanf("%d",&n);
+     int sqr=n*n;
+   int c=reverse(n);
+    int sqr1=c*c;
+    bob=reverse(sqr1);
+    if(bob==sqr)
+    printf("True");
     else
-    {
-        printf("False");
-    }
+    printf("False");
+    return 0;
 }
+int reverse(int n){
+    int rev=0,rem;
+    while(n!=0){
+        rem=n%10;
+        rev=rev*10+rem;
+        n=n/10;
+    }
+    return rev;
+    
+}
+
+
+
+
+
