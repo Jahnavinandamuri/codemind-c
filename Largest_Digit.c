@@ -1,14 +1,100 @@
+
 #include<stdio.h>
-int main()
-{
-    int n,r,key=0;
-    scanf("%d",&n);
-    while(n!=0)
-    {
-        r=n%10;
-        if(r>key)
-        key=r;
-        n=n/10;
+int main(){
+    int num,a,b,c;
+    scanf("%d",&num);
+    b=0,c=0;
+    while(num>0){
+        
+        a=num%10;
+        num=num/10;
+        if(a>=b){
+            b=a;
+        }    
+        else{
+        c=a;
+        }
     }
-    printf("%d",key);
+    if(b>c){
+        printf("%d",b);
+    }
+    else{
+        printf("%d",c);
+    }
+    
+    return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
