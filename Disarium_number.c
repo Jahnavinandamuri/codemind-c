@@ -1,26 +1,28 @@
 #include<stdio.h>
 #include<math.h>
-int main()
-{
-    int a,i=0,j,u,s=0,t;
-    scanf("%d",&a);
-    u=t=a;
-    while(a!=0)
-    {
-        j=a%10;
-        a/=10;
-        i++;
+int digit(int);
+int main(){
+    int n,i,sum=0,rem;
+    scanf("%d",&n);
+     int bob=n;
+    while(n!=0){
+       i=digit(n);
+        rem=n%10;
+        sum=sum+(pow(rem,i));
+        n=n/10;
     }
-    j=0;
-    for(;i>0;i--)
-    {
-        j=u%10;
-        s+=pow(j,i);
-        u/=10;
-    }
-    if(s==t)
+    if(bob==sum)
     printf("True");
     else
     printf("False");
     return 0;
+}
+int digit(int a){
+    int count=0;
+    while(a!=0){
+        a=a/10;
+        count++;
+    }
+    return count;
+    
 }
