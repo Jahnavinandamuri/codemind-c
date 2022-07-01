@@ -1,17 +1,19 @@
 #include<stdio.h>
-int main()
-{
-    int n,s=0,i;
-    scanf("%d",&n);
-    for(i=1;i<n;i++)
-    {
-        if(n%i==0)
-        {
-            s=s+i;
+int main(){
+    int num,x=0,k=0,i,t;
+    scanf("%d",&num);
+    for(i=1;i<num;i++){
+        t=num%i;
+        if(t==0){
+            x=i+k;
+            k=x;
         }
     }
-    if(s>n)
-    printf("True");
-    else
-    printf("False");
+    if(k>num){
+        printf("True");
+    }
+    else{
+        printf("False");
+    }
+    return 0;
 }
