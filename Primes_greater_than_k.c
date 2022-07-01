@@ -1,30 +1,27 @@
 #include<stdio.h>
-int main()
-{
-    int n,a[100],i,k,p=0,m=0,j,c=0;
-    scanf("%d",&n);
-    for(i=0;i<n;i++)
-    {
-        scanf("%d",&a[i]);
+int isPrime(int n){
+    if(n<=1) return 0;
+    for(int i=2;i*i<=n;i++){
+        if(n%i==0) return 0;
     }
-    scanf("%d",&k);
-    for(i=0;i<n;i++)
+    return 1;
+}
+int main(){
+    int n,t,c=0;
+    scanf("%d",&n);
+    int a[n];
+    for(int i=0;i<n;i++)
+    scanf("%d ",&a[i]);
+    int key;
+    scanf("%d",&key);
+    for(int i=0;i<n;i++)
     {
-        c=0;
-        if(a[i]>=k)
-        {
-            for(j=1;j<=a[i];j++)
-            {
-                if(a[i]%j==0)
-                {
-                    c++;
-                }
-            }
-            if(c==2)
-            {
-                m++;
-            }
+        if(isPrime(a[i])){
+            
+            if(a[i]>=key)
+            c++;
         }
     }
-    printf("%d",m);
+    printf("%d",c);
+    return 0;
 }
