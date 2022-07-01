@@ -1,19 +1,13 @@
 #include<stdio.h>
-int main()
-{
-    int n,a[100],i,max=0;
+int main(){
+    int n;
     scanf("%d",&n);
-    for(i=0;i<n;i++)
-    {
+    int a[n],min=999999;
+    for(int i=0;i<n;i++){
         scanf("%d",&a[i]);
+        if(min>a[i])
+        min=a[i];
     }
-    max=a[0];
-    for(i=0;i<n;i++)
-    {
-        if(max>a[i])
-        {
-            max=a[i];
-        }
-    }
-    printf("%d",max);
+    printf("%d",min);
+    return 0;
 }
