@@ -6,7 +6,7 @@ int main()
     int i,n;
     scanf("%s",s);
     n=strlen(s);
-    for(i=0;i<n;i++)
+    for (i=0;i<n;i++)
     {
         if(s[i]=='6')
         {
@@ -17,3 +17,4 @@ int main()
     printf("%s",s);
     return 0;
 }
+ 
