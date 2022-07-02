@@ -1,28 +1,24 @@
 #include<stdio.h>
+#include<math.h>
+int size(long long int num)
+{
+    int c=0;
+    while(num>0)
+    {
+        c++;
+        num/=10;
+    }
+    return c;
+}
 int main()
 {
-    long int n,sqr,rev1=0,rev2=0,m,sount=0,count=0;
-    scanf("%ld",&n);
-    sqr=n*n;
-    while(n>0)
-    {
-        m=n%10;
-        sount++;
-        rev1=(rev1*10)+m;
-        n/=10;
-    }
-    while(sqr>0)
-    {
-        m=sqr%10;
-        count++;
-        rev2=(rev2*10)+m;
-        if(sount==count)
-        {
-            break;
-        }
-        sqr/=10;
-    }
-    if(rev1==rev2)
+    long long int a;
+    scanf("%lld",&a);
+    int c=size(a);
+    long long int asq=a*a;
+    int x=pow(10,c);
+    long long int asqmod=asq%x;
+    if (asqmod==a)
     {
         printf("Automorphic Number");
     }
