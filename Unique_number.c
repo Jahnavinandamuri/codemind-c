@@ -1,30 +1,50 @@
 #include<stdio.h>
 int main()
 {
-    int n,m,temp,one=0,two=0,three=0,four=0,five=0,six=0,seven=0,eight=0,nine=0,zero=0;
-    scanf("%d",&n);
-    temp=n;
-    while(n>0)
+    int a;
+    scanf("%d",&a);
+    int c=0,b,i,j,temp,flag=0;
+    temp=a;
+    while(temp>0)
     {
-        m=n%10;
-        if(m==1){one++;}
-        if(m==2){two++;}
-        if(m==3){three++;}
-        if(m==4){four++;}
-        if(m==5){five++;}
-        if(m==6){six++;}
-        if(m==7){seven++;}
-        if(m==8){eight++;}
-        if(m==9){nine++;}
-        if(m==10){zero++;}
-        n/=10;
+        b=temp%10;
+        c+=1;
+        temp=temp/10;
     }
-    if(one<=1 && two<=1 && three<=1 && four<=1 && five<=1 && six<=1 && seven<=1 && eight<=1 && nine<=1 && zero<=1)
+    int arr[c];
+    temp=a;
+    for(i=0;i<c;i++)
     {
-        printf("Unique Number");
+        b=temp%10;
+        arr[i]=b;
+        temp=temp/10;
+    }
+    for(i=0;i<c;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            if(i!=j)
+            {
+                if(arr[i]==arr[j])
+                {
+                    flag=1;
+                    break;
+                }
+            }
+        }
+        if(flag==1)
+        {
+            break;
+        }
+    }
+    if(flag==1)
+    {
+        printf("Not Unique Number");
+        
     }
     else
     {
-        printf("Not Unique Number");
+        printf("Unique Number");
     }
+    return 0;
 }
