@@ -1,145 +1,46 @@
-#include<stdio.h>
-int main(){
-    int m,n;
-    scanf("%d %d",&m,&n);
-    int a[m][n];
-    for(int i=0;i<m;i++){
-        for(int j=0;j<n;j++){
-            scanf("%d ",&a[i][j]);
-        }
-    }
-    int sum=0,sum1=0;
-    for(int i=0;i<m;i++){
+#include <stdio.h>
+int main()
+{
+     int a[100][100],i,n,m,j,sum=0,max=0,max1=0;
+     scanf("%d%d",&n,&m);
+     for(i=0;i<n;i++)
+     {
+          for(j=0;j<m;j++)
+          {
+               scanf("%d",&a[i][j]);
+          }
+     }      
+     
+     for(i=0;i<n;i++)
+     {
         sum=0;
-        for(int j=0;j<n;j++){
-            sum+=a[i][j];
+        for(j=0;j<m;j++)
+        {
+            sum=sum+a[i][j]; 
         }
-        if(sum1<sum)
-        sum1=sum;
-    }
-    int sum2=0,sum3=0;
-    
-        
-    for(int j=0;j<n;j++){
-        sum3=0;
-        for(int i=0;i<m;i++){
-            sum3+=a[i][j];
+        if(max<sum)
+        {
+            max=sum;
         }
-        if(sum2<sum3)
-        sum2=sum3;
-    }
-    int m1=sum1>sum2?sum1:sum2;
-    printf("%d",m1);
-    return 0;
-    
-    
-    
+     } 
+     for(j=0;j<m;j++)
+     {
+        sum=0;
+        for(i=0;i<n;i++)
+        {
+            sum=sum+a[i][j]; 
+        }
+        if(max1<sum)
+        {
+            max1=sum;
+        }
+     } 
+     if(max<max1)
+     {
+         printf("%d",max1);
+     }
+     else
+     {
+         printf("%d",max);
+     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
