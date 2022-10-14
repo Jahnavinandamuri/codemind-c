@@ -1,30 +1,39 @@
 #include<stdio.h>
 int main()
 {
-    int i,j,n,m,a[100],f=0;
-    scanf("%d",&n);
-    for(i=0;i<n;i++)
+    int a;
+    scanf("%d",&a);
+    int arr[a],i,j;
+    for (i=0; i<a; i++)
     {
-        scanf("%d",&a[i]);
+        scanf("%d",&arr[i]);
     }
-    scanf("%d",&m);
-    for(i=0;i<n;i++)
+    int n;
+    scanf("%d",&n);
+    int c=0,count=0;
+    for (i=0; i<a; i++)
     {
-        int c=0;
-        for(j=0;j<n;j++)
+        count=1;
+        for (j=0; j<a; j++)
         {
-            if(a[i]==a[j])
+            if (i!=j)
             {
-                c++;
+                if (arr[i]==arr[j] && arr[i]!=-1)
+                {
+                    count++;
+                    arr[j]=-1;
+                }
             }
         }
-        if(c==m)
+        if (count==n)
         {
-            printf("%d ",a[i]);
-            f++;
-            a[i]=0;
+            printf("%d ",arr[i]);
+            c++;
         }
     }
-    if(f==0)
-    printf("-1");
+    if (c==0)
+    {
+        printf("-1");
+    }
+    return 0;
 }
